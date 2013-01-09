@@ -1,0 +1,47 @@
+
+
+===========================================================
+Error-Log:
+## ------------------------------
+ERROR protocol for Book 9626341521
+ERROR: ISBN is empty!
+
+## ------------------------------
+ERROR protocol for Book B00026ACAA
+ERROR: ISBN is empty!
+
+## ------------------------------
+ERROR protocol for Book B000A2FIEQ
+ERROR: ISBN is empty!
+
+## ------------------------------
+ERROR protocol for Book B0001WGER0
+ERROR: ISBN is empty!
+
+## ------------------------------
+ERROR protocol for Book B0001WGERU
+ERROR: ISBN is empty!
+
+## ------------------------------
+ERROR protocol for Book B00026AD4K
+ERROR: ISBN is empty!
+
+## ------------------------------
+ERROR protocol for DVD null
+ERROR: Invalid Produkt_ID = null
+
+## ------------------------------
+ERROR protocol for Book 9626342803
+ERROR: ISBN is empty!
+
+## ------------------------------
+ERROR protocol for Book B000766Y02
+ERROR: ISBN is empty!
+
+## ------------------------------
+ERROR protocol for Book 9626348011
+ERROR: ISBN is empty!
+
+
+Count Error: 10
+Count OK: 1316

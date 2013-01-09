@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="media.definitions.Track" table="dbprak20.vLieder">
+  	<composite-id>
+            <key-many-to-one name="product" column="Produkt_ID" class="media.definitions.Product" />
+            <key-property name="name" type="string" column="Name"/>
+    </composite-id> 
+	 <!-- property name="id" column="index"/> -->
+	<!-- <property name="id" column="index"/> -->
+  </class>
+
+</hibernate-mapping>
+

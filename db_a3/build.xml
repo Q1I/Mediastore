@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="media" default="runMediaDummy" basedir=".">
+	<!-- Locations -->
+	<property name="src"                location="src"/>
+	<property name="conf"               location="conf"/>
+	<property name="lib"                location="lib"/>
+	<property name="export"             location="export"/>
+	
+	<property name="classes"            location="classes"/>
+	<property name="exportZip"          location="media-students.zip"/>
+	
+	<path id="libraries">
+		<fileset dir="${lib}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	
+	<!-- Run the application with dummy implementation. -->
+	<target name="runMediaDummy" depends="compile">
+		<java classname="media.frontend.Media" fork="true">
+			<classpath>
+				<pathelement location="${classes}"/>
+				<path refid="libraries"/>
+			</classpath>
+			<jvmarg value="-Djava.util.logging.config.file=conf/logging.properties"/>
+			<arg value="conf/dummyImpl.properties"/>
+		</java>
+	</target>
+	
+	<!-- Delete class and jar files. -->
+	<target name="clean">
+		<delete dir="${classes}"/>
+		<delete dir="${export}"/>
+		<delete file="${exportZip}"/>
+	</target>
+	
+	<!-- Compile Application. -->
+	<target name="compile">
+		<mkdir dir="${classes}"/>
+		
+		<!-- Compile the project. -->
+		<javac srcdir="${src}" destdir="${classes}" target="1.5" source="1.5" encoding="ISO-8859-1" debug="on">
+			<classpath>
+				<path refid="libraries"/>
+			</classpath>
+		</javac>
+		
+		<!-- Copy all non-java files to classes. -->
+		<copy todir="${classes}">
+			<fileset dir="src">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<!-- Export the whole project. -->
+	<target name="export">
+		<delete dir="${export}"/>
+		<delete dir="${exportZip}"/>
+	
+		<copy todir="${export}/conf">
+			<fileset dir="${conf}"/>
+		</copy>
+		<copy todir="${export}/lib">
+			<fileset dir="${lib}"/>
+		</copy>
+		<copy todir="${export}/src">
+			<fileset dir="${src}"/>
+		</copy>
+		<copy file="build.xml" todir="${export}"/>
+	
+		<zip destfile="${exportZip}" basedir="${export}"/>
+	</target>
+</project>

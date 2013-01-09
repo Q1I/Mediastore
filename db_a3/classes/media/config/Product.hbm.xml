@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="media.definitions.Product" table="Produkt">
+    <id name="asin" column="P_ID">
+      <generator class="native"/>
+    </id>
+    <property name="title" column="Titel"/>
+	<property name="salesRank" column="Verkaufsrang"/>
+	<property name="picUrl" column="Bild"/>
+	
+	<set name="reviews" table="Review" lazy="true">
+      <key column="P_ID"/>
+      <many-to-many class="media.definitions.Review"/>
+      
+      
+    </set>
+  </class>
+
+</hibernate-mapping>

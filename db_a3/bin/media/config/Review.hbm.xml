@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="media.definitions.Review" table="dbprak20.vReview">
+	<id name="id" type="integer" column="R_ID">
+      <generator class="increment"/>
+    </id>
+    <many-to-one name="username" column="Kunden_ID" class="media.definitions.Kunde" />
+	<property name="rating" column="Punkte"/>
+	<property name="summary" type="string" column="Rezension"/>
+	<property name="content" type="string" column="Inhalt"/>
+	<many-to-one name="product" column="Produkt_ID" class="media.definitions.Product" />
+  </class>
+
+</hibernate-mapping>

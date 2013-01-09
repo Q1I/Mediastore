@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="media.definitions.ProduktKategorie" table="dbprak20.vProdukt_Kategorie">
+  	<composite-id>
+            <key-property name="product" column="Produkt_ID"  />
+            <key-property name="category"  column="Kategorie_ID"/>
+    </composite-id> 
+	
+  </class>
+
+</hibernate-mapping>
+

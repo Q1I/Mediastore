@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="media.definitions.Review" table="Review">
+	<id name="id" type="integer" column="ID">
+      <generator class="native"/>
+    </id>
+    <property name="username" column="Kunden_ID"/>
+	<property name="rating" column="Punkte"/>
+	<property name="summary" column="Rezension"/>
+	<property name="content" column="Inhalt"/>
+  </class>
+
+</hibernate-mapping>

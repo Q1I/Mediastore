@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="media.definitions.Offer" table="dbprak20.vAngebot">
+  	<composite-id>
+            <key-many-to-one name="product" column="Produkt_ID" class="media.definitions.Product" />
+            <key-property name="price" type = "double" column="Preis"/>
+            <key-property name="location" type="string" column="Filial_ID"/>
+    </composite-id> 
+	<property name="state" column="Zustand"/>
+	
+    
+  </class>
+
+</hibernate-mapping>
+

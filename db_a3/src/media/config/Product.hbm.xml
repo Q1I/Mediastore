@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="media.definitions.Product" table="dbprak20.vProdukt">
+	<id name="asin" type="string" column="P_ID">
+      <generator class="native"/>
+    </id>
+    <property name="title" type="string" column="Titel" not-null="true"/>
+	<property name="picUrl" column="Bild"/>
+	<property name="salesRank" column="Verkaufsrang"/>
+	<property name="avgRating" column="Punkte"/>
+	<set name="reviews" lazy="true" >
+       <key>
+          <column name="Produkt_ID"/>
+       </key>
+      <one-to-many class="media.definitions.Review"/>
+    </set>
+    <set name="categories" lazy="true" >
+       <key>
+          <column name="Produkt_ID"/>
+       </key>
+      <one-to-many class="media.definitions.Category"/>
+    </set>
+    <joined-subclass name="media.definitions.Book" table="dbprak20.vBuch">
+        <key column="Produkt_ID"/>
+        <property name="isbn" column="ISBN"/>
+        <property name="pages" column="Seitenzahl"/>
+        <property name="pubDate" column="Erscheinungsdatum"/>
+        <property name="publisher" column="Verlag"/>
+        <set name="authors" >
+	       <key>
+	          <column name="Produkt_ID"/>
+	       </key>
+	      <one-to-many class="media.definitions.Author"/>
+	    </set>
+    </joined-subclass>
+    <joined-subclass name="media.definitions.DVD" table="dbprak20.vDVD">
+        <key column="Produkt_ID"/>
+        <property name="format" column="Format"/>
+        <property name="regionCode" column="Regioncode"/>
+        <property name="runningTime" column="Laufzeit"/>
+        <set name="persons" >
+	       <key>
+	          <column name="Produkt_ID"/>
+	       </key>
+	      <one-to-many class="media.definitions.DVD$Involved"/>
+	    </set>
+    </joined-subclass>
+    <joined-subclass name="media.definitions.Music" table="dbprak20.vMusik">
+        <key column="Produkt_ID"/>
+        <property name="releaseDate" column="Erscheinungsjahr"/>
+        <property name="label" column="Label"/>
+        
+        <set name="artists" >
+	       <key>
+	          <column name="Produkt_ID"/>
+	       </key>
+	      <one-to-many class="media.definitions.Music$Artist"/>
+	    </set>
+	    
+	     <set name="tracks"  lazy="true">
+	       <key>
+	          <column name="Produkt_ID"/>
+	       </key>
+	      <one-to-many class="media.definitions.Track"/>
+	    </set>
+	    
+    </joined-subclass>
+  </class>
+
+</hibernate-mapping>
+

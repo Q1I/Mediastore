@@ -1,0 +1,48 @@
+
+
+===========================================================
+Error-Log:
+## ------------------------------
+ERROR protocol for Category CD
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category Hörbücher (8-12 Jahre)& Hörspiele
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category Alle Romane & Erzählungen& Erzählungen& Jugendbücher
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category 8-10 Jahre& Jugendbücher
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category Beck, Rufus
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category Hörbücher (8-12 Jahre)& Hörspiele
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category Artemis Fowl& Jugendbücher
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category Colfer, Eoin& Jugendbücher
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category England& Jugendbücher
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category Hörbücher
+Invalid Item (length)! 051
+
+## ------------------------------
+ERROR protocol for Category Hörbücher
+Invalid Item (length)! 051
+

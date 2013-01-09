@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="media.definitions.Person" table="dbprak20.vMedienperson">
+  	<id name="name" column="Name">
+      <generator class="native"/>
+    </id>
+	
+	 <joined-subclass name="media.definitions.Author" table="dbprak20.vBuch_Autor">
+        <key> 
+        	<column name="name"/>
+        </key>
+        <many-to-one name="product" column="Produkt_ID" class="media.definitions.Product" />
+    </joined-subclass>
+    
+     <joined-subclass name="media.definitions.DVD$Involved" table="dbprak20.vDVD_Beteiligung">
+        <key> 
+        	<column name="name"/>
+        </key>
+        <many-to-one name="product" column="Produkt_ID" class="media.definitions.Product" />
+        <property name="role" column="Rolle"/>
+    </joined-subclass>
+    
+    <joined-subclass name="media.definitions.Music$Artist" table="dbprak20.vMusik_Kuenstler">
+        <key> 
+        	<column name="name"/>
+        </key>
+        <many-to-one name="product" column="Produkt_ID" class="media.definitions.Product" />
+    </joined-subclass>
+    
+  </class>
+
+</hibernate-mapping>
+
